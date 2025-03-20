@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Mar 19 05:23:49 2025
+# Process ID: 115
+# Current directory: /home/atomichan/workspaces/RedPitaya-FPGA
+# Command line: vivado
+# Log file: /home/atomichan/workspaces/RedPitaya-FPGA/vivado.log
+# Journal file: /home/atomichan/workspaces/RedPitaya-FPGA/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/atomichan/workspaces/RedPitaya-FPGA/prj/logic/project/redpitaya.xpr
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4 -remote_cmd {ssh -q -o BatchMode=yes}
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
